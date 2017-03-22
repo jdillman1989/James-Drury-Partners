@@ -1,0 +1,11 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	{% for post in posts %}
+
+		{{post.post_title}}
+
+	{% endfor %}
+
+{% endblock %}

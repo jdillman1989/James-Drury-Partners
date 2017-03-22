@@ -1,0 +1,60 @@
+.twitter-feed{
+  background-color: $offwhite;
+  overflow: hidden;
+  .container{
+    overflow: visible;
+    padding-bottom: 5rem;
+    header{
+      padding: 5rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .button{
+        margin: 0;
+      }
+      @include breakpoint(800px){
+        flex-direction: column;
+        .button{
+          margin-top: 2rem;
+        }
+      }
+    }
+    .tweets_container{
+      width: 125%;
+      overflow: hidden;
+      position: relative;
+      .slider_tweets{
+        .tweet-slide{
+          margin-right: 50px;
+          max-width: 375px;
+          time{
+            text-transform: uppercase;
+            color: #777;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-size: 0.8em;
+          }
+          a{
+            color: #777;
+          }
+        }
+      } 
+      .slider_wrapper_arrows{
+        position: absolute;
+        display: block;
+        height: 100%;
+        left: 75%;
+        top: 0;
+        width: 25%;
+        background-color: rgba(241, 241, 241, 0.9); 
+        a{
+          display: block;
+          width: 30%;
+          height: 50%;
+          text-align: center;
+          vertical-align: middle;   
+        }  
+      } 
+    }
+  }
+}

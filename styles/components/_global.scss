@@ -1,0 +1,21 @@
+.global{
+
+  &_border{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    border: 5px solid $gold;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+}
+
+@include breakpoint(768px){
+  .global_border{
+    display: none;
+  }
+  body{
+    border: 5px solid $gold;
+  }
+}

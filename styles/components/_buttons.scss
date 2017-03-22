@@ -1,0 +1,121 @@
+// Default button styling
+
+.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
+  display: inline-block;
+  padding: 0 3rem;
+  color: $white;
+  font-family: $sans;
+  background-color: $highlight;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 38px;
+
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 1px solid $highlight;
+  cursor: pointer;
+  outline: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  transition: $default-transition;
+
+  &:hover{
+    color: $white;
+    background-color: $highlight-l;
+    border: 1px solid $highlight-l;
+  }
+
+  &:active{
+    color: $white;
+    background-color: $highlight-d;
+    border: 1px solid $highlight-d;
+    transform: translateY(3px);
+    &:hover{
+      color: $white;
+      background-color: $highlight;
+      border: 1px solid $highlight;
+    }
+  }
+
+  &.hollow{
+    color: $highlight;
+    background-color: transparent;
+
+    &:hover{
+      color: $white;
+      background-color: transparentize($highlight, .5);
+    }
+
+    &:focus{
+      color: $white;
+      background-color: transparentize($highlight, .5);
+      transform: translateY(3px);
+    }
+  }
+
+  &.disabled{
+    opacity: .25;
+    pointer-events: none;
+    &:hover{
+      color: $white;
+      background-color: $highlight;
+      border: 1px solid $highlight;
+    }
+  }
+
+  &.next{
+    &:after{
+      content: "";
+      display: inline-block;
+      font-size: 1.6rem;
+      background-image: url(../img/arrow_right_gold.svg);
+      background-size: contain;
+      background-position: center top;
+      background-repeat: no-repeat;
+      height: 1.4rem;
+      width: 1.4rem;
+      margin-left: 1.4rem;
+      margin-bottom: -2px;
+    }
+    &:hover{
+      &:after{
+        background-image: url(../img/arrow_right_white.svg);
+      }
+    }
+  }
+
+  &.bold{
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: .75rem 3rem;
+  }
+
+
+}
+
+
+.arrow{
+  text-indent: -9999px;
+  position: relative;
+  &:after{
+    top: 0;
+    left: 0;
+    content:"";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-image: url("../img/sprite.stack.svg#arrow");
+    background-size: 3rem;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  &.prev{
+    &:after{
+      transform: rotate(180deg);
+    }
+  }
+}

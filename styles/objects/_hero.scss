@@ -1,0 +1,478 @@
+.hero{
+  min-height: 100vh;
+  padding: 15rem 0 0rem;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  border-bottom: 5px solid $gold;
+  background-color: $grey-d;
+  overflow: hidden;
+  .line{
+    margin-bottom: 3rem;
+    width: 30rem;
+    @include breakpoint(650px){
+      max-width: calc(100% - 8rem);
+    }
+  }
+  &_content{
+    @extend .container;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10rem 0;
+    h1{
+      font-size: 70px;
+      color: $white;
+      margin-bottom:5rem;
+      .fade-in{
+        display: block;
+        overflow: hidden;
+        height: 84px;
+        span{
+          transform: translateY(-85px);
+          opacity: 0;
+          display: block;
+          animation-name: slide-down;
+          animation-duration: 1s; /* or: Xms */
+          animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.95); /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
+          animation-fill-mode: forwards; /* or: backwards, both, none */
+          animation-delay: .3s; /* or: Xms */
+        }
+        &:nth-of-type(2){
+          span{
+            animation-delay: .6s; /* or: Xms */
+          }
+        }
+        &:nth-of-type(3){
+          span{
+            animation-delay: .9s; /* or: Xms */
+          }
+        }
+      }
+      @include breakpoint(1024px){
+        font-size: 60px;
+        max-width: 40rem;
+        .fade-in{
+          height: 72px;
+        }
+      }
+      @include breakpoint(800px){
+        font-size: 50px;
+        max-width: 100%;
+        .fade-in{
+          height: 60px;
+        }
+      }
+    }
+    @include breakpoint(1260px){
+      padding: 10rem 5rem 5rem;
+    }
+    @include breakpoint(800px){
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 10rem 2.5rem 2.5rem;
+    }
+  }
+  &_bg{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  &_cta{
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+    margin-bottom: 5rem;
+    h3{
+      color: $white;
+      display: inline-block;
+      margin-bottom: 3rem;
+    }
+    .button{
+      display: inline-block;
+    }
+    @include breakpoint(800px){
+      text-align: center;
+      align-items: center;
+      &:before{
+        width: 100%;
+      }
+    }
+    .line{
+      margin-right: 0;
+    }
+  }
+  &_center{
+    .hero_content{
+      max-width: 680px;
+      @include breakpoint(800px){
+        max-width: 100%;
+        padding: 0 2rem 5rem;
+      }
+    }
+    .line{
+      width: 50rem;
+      margin-left: -5rem;
+      @include breakpoint(800px){
+        margin-left: 0;
+      }
+      &:first-of-type{
+        margin-bottom: .5rem;
+        margin-left: 0rem;
+        @include breakpoint(800px){
+          margin-left: 5rem;
+        }
+      }
+    }
+  }
+  &_details{
+    max-width: 100%;
+    p{
+      font-size: 1.4rem;
+      line-height: 1.75;
+      color: $white;
+      font-family: $sans;
+      font-weight: 100;
+      color: $offwhite;
+      max-width: 45rem;
+      @include breakpoint(650px){
+        max-width: 100%;
+      }
+    }
+  }
+  &_left{
+    .hero{
+      &_content{
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left: 5rem;
+        padding-right: 5rem;
+        @include breakpoint(900px){
+          flex-wrap: wrap;
+          justify-content: center;
+          padding: 0 2rem 7.5rem;
+        }
+      }
+      &_cta{
+        text-align: left;
+        color: $white;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 56%;
+        @include breakpoint(900px){
+          margin-bottom: 0;
+        }
+        .heading_large{
+          max-width: 100%;
+        }
+        p{
+          padding-right: 7.5rem;
+        }
+        .line{
+          width: 50rem;
+          margin-left: -5rem;
+          &:first-of-type{
+            margin-bottom: .5rem;
+            margin-left: 0rem;
+          }
+        }
+        @include breakpoint(900px){
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+          .heading_large{
+            text-align: center;
+          }
+          p{
+            padding-right: 0;
+            text-align: center;
+          }
+        }
+      }
+      &_graphic{
+        width: 40%;
+        max-width: 60rem;
+        padding-top: 7rem;
+        img{
+          max-width: 100%;
+        }
+        @include breakpoint(900px){
+          width: 100%;
+          padding: 2rem 0;
+        }
+      }
+    }
+  }
+  &_middle{
+    justify-content: center;
+    h1{
+      margin-bottom: 0;
+    }
+    .line{
+      margin-bottom: 1rem;
+      width: 50rem;
+      &.rtl{
+        margin-left: -2rem;
+      }
+    }
+  }
+  &_half{
+    height: 40rem;
+    min-height: 0px;
+  }
+  &_top{
+    justify-content: flex-start;
+    align-items: center;
+  }
+  &_contact{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+    color: $white;
+    padding-bottom: 15rem;
+    max-width: 120rem;
+    @include breakpoint(120rem){
+      padding: 0 5rem 15rem;
+    }
+    @include breakpoint(70rem){
+      padding-bottom:5rem;
+    }
+    &_options{
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin: 5rem 0 10rem;
+      @include breakpoint(1000px){
+        flex-wrap: wrap;
+      }
+      @include breakpoint(700px){
+        margin-bottom: 2.5rem;
+      }
+    }
+    &_option{
+      width: calc(33.33333% - 2rem);
+      text-align: center;
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .heading{
+        color: $white;
+      }
+      p{
+        margin-bottom: 1rem;
+        width: 100%;
+      }
+      a{
+        font-weight: 500;
+      }
+      &_image{
+        width: 10rem;
+        height: 10rem;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $gold;
+        border-radius: 100%;
+        margin-bottom: 2rem;
+        transition: .25s all ease;
+        &:hover{
+          background-color: transparentize($gold, .5);
+          transform: scale(1.1);
+        }
+      }
+      @include breakpoint(1000px){
+        width: 100%;
+        p{
+          margin: 0 auto 5rem;
+        }
+      }
+    }
+    &_form{
+      max-width: 70rem;
+      .heading{
+        color: $white;
+      }
+      header{
+        margin-bottom: 5rem;
+      }
+      form{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .input{
+        width: calc(50% - 2rem);
+        position: relative;
+        font-family: $sans;
+        margin-bottom: 2rem;
+        input, textarea{
+          width: 100%;
+          background-color: transparent;
+          border: 1px solid $gold;
+          border-radius: 0;
+          font-size: 1.6rem;
+          padding: 1.25rem 1.5rem;
+          font-family: $sans;
+          line-height: 1.5;
+          transition: .25s all ease;
+          &:focus, &.has-content{
+            background-color: transparentize($gold, .5);
+            color: $white;
+            & + label{
+              top: -2.5rem;
+            }
+          }
+        }
+        label{
+          position: absolute;
+          top: 1.75rem;
+          left: 1.5rem;
+          font-size: 1.2rem;
+          text-transform: uppercase;
+          color: $gold;
+          letter-spacing: .1rem;
+          font-weight: 500;
+          transition: .25s all ease;
+          pointer-events: none;
+        }
+        textarea{
+          min-height: 15rem;
+        }
+        @include breakpoint(700px){
+          width: 100%;
+        }
+      }
+      .input_full{
+        width: 100%;
+      }
+      button{
+        margin:  0 auto;
+        font-size: 1.2rem;
+        font-weight: 400;
+        background-color: transparentize($gold, .75);
+        border: none;
+        font-size: 1.5rem;
+        padding: 1rem 7.5rem;
+        &:hover{
+          background-color: $gold;
+          color: $black;
+          border: none;
+        }
+      }
+    }
+  }
+  &_confirmation{
+    .hero_content{
+      max-width: 85rem;
+      .heading_large{
+        margin-bottom: 3.5rem;
+      }
+    }
+    .line{
+      width: 85rem;
+      max-width: 100%;
+      &.ltr{
+        margin-left: -10rem;
+      }
+    }
+    &_details{
+      margin-top: 3.5rem;
+      display: flex;
+      justify-content: space-between;
+      > p{
+        color: $white;
+        max-width: 45%;
+      }
+      .heading{
+        color: $gold-l;
+        font-weight: 500;
+        margin-bottom: .5rem;
+      }
+      a{
+        color: $gold-l;
+      }
+      div{
+        text-align: right;
+        p{
+          margin: 0 0 .5rem;
+          color: $white;
+        }
+        a{
+          color: $white;
+          text-decoration: none;
+          margin-left: .5rem;
+          transition: .25s all ease;
+          &:hover{
+            color: $gold-l;
+            cursor: pointer;
+          }
+        }
+        svg{
+          width: 3rem;
+          height: 3rem;
+          margin-top: 1rem;
+          margin-left: 1rem;
+          g{
+            fill: $white;
+            transition: .25s all ease;
+          }
+          &:hover{
+            cursor: pointer;
+            g{
+              fill: $gold-l;
+            }
+          }
+        }
+      }
+      @include breakpoint(800px){
+        flex-direction: column;
+        > p, div {
+          max-width: 100%;
+          text-align: center;
+        }
+        > p {
+          margin-bottom: 3rem;
+        }
+      }
+    }
+  }
+  &_scroll_button{
+    height: 5rem;
+    width: 7rem;
+    display: block;
+    position: absolute;
+    bottom: -.5rem;
+    z-index: 2;
+    left: calc(50% - 3.5rem);
+    img{
+      max-width: 100%;
+    }
+    &:hover{
+      background-color: transparentize($gold, .5);
+    }
+  }
+  @include breakpoint(800px){
+    justify-content: center;
+  }
+}

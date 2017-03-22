@@ -1,0 +1,13 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	{{function('get_search_form')}}
+
+	{% for post in posts %}
+
+		{{post.post_title}}
+	
+	{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,35 @@
+.explorer{
+  .global_border{
+    display: none;
+  }
+  body{
+    border: 5px solid $gold;
+  }
+  &-10{
+    .slider_wrapper{
+      display: block;
+      .slick-track{
+        display: flex;
+      }
+      .slide{
+        display: block;
+        max-width: 100%;
+      }
+    }
+    .slider_wrapper_arrows{
+      display: block;
+      z-index: 0;
+      padding: 0 2rem;
+      .prev{
+        position: absolute;
+        top: 0;
+        left: 2rem;
+      }
+      .next{
+        position: absolute;
+        top: 0;
+        right: 2rem;
+      }
+    }
+  }
+}

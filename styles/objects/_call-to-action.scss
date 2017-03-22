@@ -1,0 +1,45 @@
+.call-to-action{
+  position: relative;
+  padding: 5rem;
+  text-align: center;
+  color: $white;
+  overflow: hidden;
+  max-width: 100%;
+  &_bg{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  &_content{
+    margin: 0 auto;
+    max-width: 80rem;
+    .heading{
+      margin-bottom: 3rem;
+    }
+    p{
+      font-family: $sans;
+      font-weight: 100;
+      font-size: 1.8rem;
+      line-height: 1.75;
+
+      margin-bottom: 3rem;
+      margin-top: 3rem;
+    }
+    .line{
+      width: 100%;
+      margin-bottom: 1rem;
+      &:last-of-type{
+        margin-left: -5rem;
+      }
+      @include breakpoint(800px){
+        margin-left: 2.5rem;
+        &:last-of-type{
+          margin-left: -2.5rem;
+        }
+      }
+    }
+  }
+}

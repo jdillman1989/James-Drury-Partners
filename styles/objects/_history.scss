@@ -1,0 +1,212 @@
+.history{
+  &_intro{
+    padding: 5rem 0;
+    position: relative;
+    header{
+      padding-bottom: 5rem;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      .heading_mid{
+        font-size: 4rem;
+        font-weight: 500;
+        font-family: $serif;
+        color: $black-l;
+        text-align: right;
+        display: inline-block;
+        &:first-of-type{
+          padding: 0 1rem 5rem 0;
+        }
+        &:last-of-type{
+          text-align: left;
+          padding: 4rem 0 0 2rem;
+        }
+        @include breakpoint(650px){
+          display: none;
+        }
+      }
+      span{
+        font-size: 18rem;
+        font-family: $serif;
+        color: $gold-l;
+        display: inline-block;
+        line-height: 14rem;
+        @include breakpoint(650px){
+          display: none;
+        }
+      }
+      .mobile-only{
+        display: none;
+        @include breakpoint(650px){
+          display: block;
+          width: 100%;
+          text-align: center!important;
+          padding: 0!important;
+          span{
+            display: inline-block;
+            font-size: 5rem;
+            line-height: 1;
+          }
+        }
+      }
+      @include breakpoint(1024px){
+        justify-content: center;
+      }
+
+      @include breakpoint(650px){
+        display: block;
+      }
+
+    }
+    &_wrapper{
+      display: flex;
+      justify-content: flex-end;
+    }
+    &_content{
+      display: flex;
+      position: relative;
+      align-items: flex-start;
+      justify-content: space-between;
+      max-width: 920px;
+      video{
+        width: 100%;
+        position: relative;
+        z-index: 1;
+      }
+      .video-wrapper{
+        max-width: calc(50% - 2.5rem);
+        position: relative;
+        &:after{
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background-image: url(../img/video_play-button.png);
+          background-position: center;
+          background-repeat: no-repeat;
+          z-index: 2;
+        }
+        @include breakpoint(800px){
+          max-width: 100%;
+          margin-bottom: 2rem;
+        }
+      }
+      p{
+        max-width: calc(50% - 2.5rem);
+        font-family: $sans;
+        color: $grey;
+        line-height: 1.75;
+
+        font-size: 1.4rem;
+        .dropcap{
+          font-family: $serif;
+          color: $gold-l;
+          float: left;
+          font-weight: 900;
+          font-size: 7rem;
+          line-height: 6rem;
+          padding-right: 1rem;
+        }
+        @include breakpoint(800px){
+          max-width: 100%;
+        }
+      }
+      @include breakpoint(1024px){
+        justify-content: space-between;
+        max-width: 100%;
+      }
+      @include breakpoint(800px){
+        flex-wrap: wrap;
+      }
+    }
+    .line{
+      width: 50rem;
+      height: 1px;
+      position: absolute;
+      left: -5rem;
+      bottom: 0;
+      &:last-of-type{
+        bottom: .5rem;
+        left: 0;
+      }
+    }
+  }
+  &_timeline{
+    &_entry{
+      padding: 5rem 0;
+      time{
+        width: 50%;
+        text-align: center;
+        display: block;
+        font-size: 15rem;
+        line-height: 15rem;
+        font-family: $serif;
+        margin-bottom: -15rem;
+        color: $grey-l;
+        @include breakpoint(800px){
+          width: 100%;
+          margin: 0 auto;
+        }
+      }
+      figure{
+        display: flex;
+        align-content: space-between;
+        align-items: flex-start;
+        position: relative;
+        .img{
+          width: 50%;
+          img{
+            max-width: 100%;
+          }
+          &:first-of-type{
+            padding-top: 10rem;
+            @include breakpoint(800px){
+              display: none;
+            }
+          }
+          &:nth-of-type(2){
+            width: 20%;
+            height: auto;
+            position: absolute;
+            left: 40%;
+            top: calc(50% - 10vw);
+            @include breakpoint(1024px){
+              top: calc(50% - 20vw);
+            }
+            @include breakpoint(800px){
+              display: none;
+            }
+          }
+          &:last-of-type{
+            @include breakpoint(800px){
+              width: 100%;
+            }
+          }
+        }
+        @include breakpoint(800px){
+
+        }
+      }
+      &_content{
+        padding: 5rem 0 0 15vw;
+        color: $black-l;
+        p{
+          color: $grey;
+          font-size: 1.4rem;
+          margin-top: 2rem;
+        }
+        @include breakpoint(1024px){
+          padding-left: 12.5vw;
+        }
+        @include breakpoint(800px){
+          padding: 5rem 2.5rem 0;
+        }
+        @include breakpoint(650px){
+          padding: 2.5rem 0;
+        }
+      }
+    }
+  }
+}

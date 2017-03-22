@@ -1,0 +1,156 @@
+.slider{
+  position: relative;
+  height: 60rem;
+  &_section{
+    background-color: $grey-l;
+    padding-top: 5rem;
+    position: relative;
+    height: 100%;
+    .container{
+      justify-content: space-between;
+      display: flex;
+      @include breakpoint(1024px){
+        flex-wrap: wrap;
+      }
+    }
+    .slider{
+      width: calc(50% - 2rem);
+      margin-bottom: 5rem;
+      position: relative;
+      .slick-track{
+        display: flex;
+        align-items: center;
+      }
+      .heading_mid{
+        width: 100%;
+        text-align: center;
+      }
+      .line{
+        height: 6rem;
+        position: absolute;
+        left: 50%;
+        z-index: 10;
+        margin-top: 2rem;
+      }
+      @include breakpoint(1024px){
+        width: 100%;
+      }
+    }
+  }
+  &_container{
+    position: relative;
+    height: calc(100% - 10rem);
+  }
+  &_wrapper{
+    background-color: $offwhite;
+    padding: 5rem 5rem 7.5rem;
+    margin: 5rem 0 0;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .slide{
+      text-align: center;
+      color: $grey;
+      padding: 0rem 3rem 1rem;
+      position: relative;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      p{
+        font-family: $sans;
+        font-size: 1.8rem;
+        font-weight: 100;
+        position: relative;
+        z-index: 1;
+        &:before, &:after{
+          display: block;
+          color: $grey-l;
+          font-size: 20rem;
+          font-family: $serif;
+          position: absolute;
+          font-weight: 900;
+          height: 5rem;
+          line-height: 15rem;
+          z-index: -1;
+        }
+        &::before{
+          content: "\201C";
+          top: -2rem;
+          left: -1rem;
+
+        }
+        &:after{
+          content: "\201D";
+          bottom: 0;
+          right: 0;
+        }
+      }
+      h4{
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        font-family: $sans;
+
+        font-weight: 500;
+        position: relative;
+        z-index: 1;
+      }
+      img{
+        display: block;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+    }
+    .slick-dots{
+      display: flex!important;
+      justify-content: center;
+      width: 100%;
+      bottom: 2rem;
+      left: 0;
+      position: absolute;
+      margin: 0;
+      li{
+        list-style: none;
+        button{
+          background-color: $grey;
+          height: 1px;
+          width: 4rem;
+          display: block;
+          text-indent: -9999px;
+          border: none;
+          margin: 0 1px;
+          padding: 0;
+          transition: .2s all ease;
+        }
+        &.slick-active{
+          button{
+            background-color: $gold;
+            height: 3px;
+          }
+        }
+      }
+    }
+    &_arrows{
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      top: calc(50% - 1rem);
+      left: 0;
+      width: 100%;
+      padding: 0 2rem;
+      a{
+        text-decoration: none;
+        font-size: 2rem;
+      }
+    }
+    @include breakpoint(800px){
+      padding: 2.5rem 2.5rem 5rem;
+    }
+  }
+  blockquote.twitter-tweet{
+    display: none;
+  }
+}

@@ -1,0 +1,190 @@
+.news-article{
+  padding-top: 10rem;
+  max-width: 120rem;
+  margin: 0 auto;
+  position: relative;
+  .line.vertical{
+    height: 50rem;
+    width: 1px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: -5rem;
+    &.btt{
+      margin-top: 0rem;
+      left: 1rem;
+    }
+    @include breakpoint(800px){
+      display: none;
+    }
+  }
+  .container{
+    max-width: 90rem;
+    padding-bottom: 5rem;
+    margin-bottom: 5rem;
+    overflow: visible;
+    .line{
+      width: 110%;
+      height: 1px;
+      margin-left: 6rem;
+      max-width: 80vw;
+      &.ltr{
+        margin-left: 0rem;
+        margin-top: 1rem;
+      }
+      @include breakpoint(600px){
+        max-width: 100%;
+        margin-left: 0;
+        &.m-hide{
+          display: none;
+        }
+      }
+    }
+
+  }
+  &_content{
+    padding-bottom: 5rem;
+    .heading_big{
+      font-size: 4rem;
+      color: $gold;
+      @include breakpoint(800px){
+        font-size: 3rem;
+      }
+    }
+    .heading_average{
+      font-size: 2.4rem;
+      margin: 4rem 0 2.5rem;
+      color: $grey-d;
+    }
+    .heading_standard{
+      margin: 4rem 0 1rem;
+      font-weight: 400;
+      color: $grey-d;
+    }
+    ul li{
+      margin: 0;
+      line-height: 3rem;
+      font-size: 1.5rem;
+    }
+    ul li{
+      list-style:disc;
+      margin-left: 1.5rem;
+    }
+    img{
+      max-width: 100%;
+      @include breakpoint(800px){
+        float: none;
+        margin: 0 auto;
+      }
+    }
+    blockquote{
+      display: table;
+      padding: 2rem 0rem;
+      border-top: 1px solid $gold;
+      border-bottom: 1px solid $gold;
+      border-radius: 0px;
+      background-color: transparent;
+      font-family: $sans;
+      color: $grey;
+      font-size: 1.6rem;
+      line-height: 1.7;
+      &:after, &:before{
+        font-family: $serif;
+        font-weight: 900;
+        margin: 0;
+        font-size: 5rem;
+        position: relative;
+      }
+      &:before{
+        bottom: -1.5rem;
+        margin-top: -5rem;
+      }
+      &:after{
+        bottom: -6.5rem;
+        margin-top: -5rem;
+      }
+    }
+    p{
+      font-family: $sans;
+      line-height: 1.75;
+      font-size: 1.5rem;
+      max-width: 100%;
+      color: $grey;
+    }
+    time{
+      font-size: 1.2rem;
+      font-family: $sans;
+      text-transform: uppercase;
+      color: $grey;
+      margin: 2rem 0;
+      display: inline-block;
+    }
+  }
+  &_actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 3.6rem;
+    position: relative;
+    overflow: hidden;
+    .line{
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: calc(50% - .5rem);
+      z-index: -1;
+      @include breakpoint(800px){
+        display: none;
+      }
+    }
+    &_share{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $white;
+      h4{
+        margin: 0 3rem 0 0;
+        letter-spacing: .1rem;
+        color:$gold;
+      }
+      a{
+        width: 2rem;
+        height: 2rem;
+        display: inline-block;
+        margin: 0 1rem;
+        transition: .2s all ease;
+        svg{
+          display: block;
+          height: 100%;
+          width: 100%;
+          g{
+            fill: $grey;
+            transition: .2s all ease;
+          }
+        }
+        &:hover{
+          transform: scale(1.1);
+          svg g{
+            fill: $gold;
+          }
+        }
+      }
+      @include breakpoint(600px){
+        padding-bottom: 3rem;
+      }
+    }
+    .button{
+      background-color: $white;
+      @include breakpoint(600px){
+        margin: 0 auto;
+      }
+    }
+    @include breakpoint(600px){
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  @include breakpoint(800px){
+    padding-top: 5rem;
+  }
+}

@@ -1,0 +1,11 @@
+{
+	"acf_fields": [
+		"contact_headline",
+		"contact_image",
+		"form_title",
+		"form_intro",
+		"form",
+		"form_button_label",
+		"form_confirmation"
+	]
+}

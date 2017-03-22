@@ -1,0 +1,7 @@
+.focus-page{
+  @include breakpoint(450px){
+    .fade-in:last-of-type{
+      height: 120px;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+<header class="ug global" data-aos="fade-down" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="0">
+	{% for link in data.site_links %}
+	    {% if loop.index - 1 == (loop.length / 2) %}
+			  <a href="{{blog_url}}" class="logo_link">
+			    <img src="{{theme_url}}/assets/img/logo_full.png" alt="{{ site_title }}">
+			  </a>
+	    {% endif %}
+		<a href="{{link.url}}">{{link.label}}</a>
+	{% endfor %}
+</header>

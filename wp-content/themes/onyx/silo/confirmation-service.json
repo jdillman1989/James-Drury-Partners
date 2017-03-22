@@ -1,0 +1,10 @@
+{
+	"acf_fields": [
+		"contact_title",
+		"intro_image",
+		"email",
+		"recent_tweets",
+		"twitter_link",
+		"linkedin_link"
+	]
+}

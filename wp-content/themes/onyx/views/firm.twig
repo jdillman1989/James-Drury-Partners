@@ -1,0 +1,178 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<main class="firm-page">
+
+<div class="global_border"></div>
+
+<section class="hero hero_center">
+  <div class="hero_content">
+    <h1 class="heading_large">
+      {% for headline in data.intro_headline %}
+        <div class="fade-in">
+          <div data-aos="fade-down" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="{{loop.index * 100}}">{{headline.text}}</div>
+        </div>
+      {% endfor %}
+    </h1>
+    <div class="hero_details">
+      <div class="line hidden rtl"><span></span></div>
+      <div class="line hidden ltr"><span></span></div>
+      <p data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="0" data-aos-anchor=".hero">{{data.intro_content}}</p>
+    </div>
+  </div>
+  <a href="#" class="hero_scroll_button">
+    <img src="{{theme_url}}/assets/img/hero_arrow.png" alt="">
+  </a>
+  <div data-aos="zoom-out" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="0" class="hero_bg" style="background-image: url({{data.intro_image}})"></div>
+</section>
+
+<section class="history">
+  <div class="container">
+    <div class="history_intro" >
+      <header data-aos="fade-right" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="0">
+        {% for title in data.content_title %}
+          {% if loop.first %}
+          {% else %}
+            <span>&amp;</span>
+          {% endif %}
+          <h2 class="heading_mid">{{title.text}}</h2>
+        {% endfor %}
+        {% for title in data.content_title %}
+          <h2 class="heading_mid mobile-only">{% if loop.first %}{% else %} <span>&amp;</span>{% endif %}{{title.text}}</h2>
+        {% endfor %}
+      </header>
+      <div class="history_intro_wrapper">
+        <div class="history_intro_content">
+          <div class="video-wrapper lightbox-trigger video-lightbox" data-aos="fade-right" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="200">
+            <video autoplay="true" loop="true" poster="{{data.content_video_thumbnail}}" >
+              {{sources}}
+            </video>
+            <div class="lightbox_content">
+              <video controls="true" poster="{{data.content_video_thumbnail}}" >
+                {{sources}}
+              </video>
+            </div>
+          </div>
+          <p data-aos="fade-left" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="200"><span class="dropcap">{{drop_cap}}</span>{{not_drop_cap}}</p>
+        </div>
+        <div class="line hidden ltr"><span></span></div>
+        <div class="line hidden rtl"><span></span></div>
+      </div>
+    </div>
+    <div class="history_timeline">
+      <article class="history_timeline_entry">
+        <time data-aos="fade-down" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="0">{{data.content_image_title}}</time>
+        <figure class="history_timeline_gallery history_timeline_gallery-three">
+          <div class="img" data-aos="fade-right" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="0">
+            <img class="shifting-img full" src="{{data.content_image1}}">
+          </div>
+          <div class="img" data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="0">
+            <img class="shifting-img full" src="{{data.content_image2}}">
+          </div>
+          <div class="img" data-aos="fade-left" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="0">
+            <img class="shifting-img half" src="{{data.content_image3}}">
+            <div class="history_timeline_entry_content" data-aos="fade-left" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="0">
+              <h3 class="heading_average">{{data.content_image_heading}}</h3>
+              <p>{{data.content_image_text}}</p>
+            </div>
+          </div>
+        </figure>
+
+        <div class="line hidden vertical ttb"><span></span></div>
+        <div class="line hidden vertical btt"><span></span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="partnership">
+
+  <div class="partnership_grid">
+    {% for logo in data.testimonial_logos %}
+      <div class="partnership_grid_logo">
+        <img data-aos="zoom-in" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="{{loop.index * 100}}" src="{{logo.url}}">
+      </div>
+    {% endfor %}
+  </div>
+
+  <section class="slider">
+    <div class="line hidden vertical ttb"><span></span></div>
+    <div class="slider_container"  data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750">
+      <div class="slider_quotes slider_quotes slider_wrapper">
+        {% for testimony in data.testimonials %}
+          <article class="slide">
+            <p>{{testimony.text}}</p>
+            <h4 class="heading_small">{{testimony.name_title}}</h4>
+            {% if testimony.image %}
+              <img src="{{testimony.image}}">
+            {% endif %}
+          </article>
+        {% endfor %}
+      </div>
+      <div class="slider_wrapper_arrows arrows ">
+        <a href="#" class="prev">&larr;</a>
+        <a href="#" class="next">&rarr;</a>
+      </div>
+    </div>
+  </section>
+
+</section>
+
+<section class="team">
+  <div class="container">
+    <div class="team_info">
+      <h2 class="heading_average" data-aos="fade-right" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="0" >{{data.team_title}}</h2>
+      <p data-aos="fade-right" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="0" >{{data.team_content}}</p>
+      <div class="line hidden vertical ttb"><span></span></div>
+      <div class="line hidden vertical btt"><span></span></div>
+    </div>
+    <div class="team_grid">
+      {% for member in data.team_members %}
+        <article class="team_grid_person lightbox-trigger" data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="0">
+          <img src="{{member.portrait}}">
+          <header>
+            <h3 class="team_grid_person_name">{{member.name}}</h3>
+            <p class="team_grid_person_title">{{member.title}}</p>
+          </header>
+          <div class="lightbox_content">
+            <h2 class="heading heading_big">{{member.lightbox_title}}</h2>
+            <div class="lines">
+              <div class="line hidden ltr"><span></span></div>
+              <div class="line hidden rtl"><span></span></div>
+            </div>
+            <div class="content">
+              <div class="images">
+                <img src="{{member.portrait}}">
+              </div>
+              <article>
+                <h3 class="heading heading_large">{{member.name}}</h3>
+                <h4 class="heading heading_standard">{{member.title}}</h4>
+                {{member.lightbox_content}}
+              </article>
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="call-to-action">
+  <div class="call-to-action_content">
+    <h2 class="heading heading_big" data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="0">{{data.cta_title}}</h2>
+    <div class="line hidden ltr"><span></span></div>
+    <div class="line hidden rtl"><span></span></div>
+    <p data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="0">{{data.cta_content}}</p>
+    <a data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="0" href="{{data.cta_url}}" class="button gold hollow">{{data.cta_label}}</a>
+  </div>
+  <div data-aos="zoom-out" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="0" class="call-to-action_bg" style="background-image: url({{data.cta_image}})"></div>
+</section>
+
+<section class="lightbox fullscreen">
+  <span class="close">&times;</span>
+  <div class="lightbox_content">
+  </div>
+  <div class="lightbox_underlay"></div>
+</section>
+{% endblock %}

@@ -1,0 +1,16 @@
+.container{
+  max-width: 120rem;
+  margin: 0 auto;
+  width: 100%;
+  overflow: hidden;
+  @include breakpoint(1250px){
+    max-width: 100%;
+    padding: 0 5rem;
+  }
+  @include breakpoint(800px){
+    padding: 0 2.5rem;
+  }
+  @include breakpoint(650px){
+    padding: 0 2rem;
+  }
+}

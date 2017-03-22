@@ -1,0 +1,86 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<main class="contact-page">
+
+<div class="global_border"></div>
+
+<section class="hero hero_middle hero_top">
+  <div class="hero_content ">
+    <h1 class="heading_large">
+      <div class="fade-in">
+        <div data-aos="fade-down" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="0">{{data.contact_headline}}</div>
+      </div>
+    </h1>
+    <div class="line hidden rtl"><span></span></div>
+    <div class="line hidden ltr"><span></span></div>
+  </div>
+  <div class="hero_contact">
+    <header class="hero_contact_options">
+      {% for contact in contact_data %}
+        <div class="hero_contact_option" data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750">
+          <a href="{{contact.link}}" class="hero_contact_option_image">
+            <img src="{{contact.image}}">
+          </a>
+          <h2 class="heading heading_average">{{contact.title}}</h2>
+          <p>{{contact.content}}<br/><a href="{{contact.link}}">{{contact.label}}</a></p>
+        </div>
+      {% endfor %}
+    </header>
+    <div class="hero_contact_form">
+      <header>
+        <h3 class="heading heading_average" data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-anchor="top-center" data-aos-duration="750"  >{{data.form_title}}</h3>
+        <p data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750">{{data.form_intro}}</p>
+      </header>
+      <form method="post" action="{{data.form_confirmation}}">
+        {% for input in data.form %}
+          {% if input.acf_fc_layout == "name_input" %}
+            <div class="input" data-aos="{% if loop.index % 2 == 0 %}fade-left{% else %}fade-right{% endif %}" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750">
+              <input type="text" id="name" name="name{% if input.required %}-required{% endif %}">
+              <label>
+                {{input.label}}{% if input.required %}<sup>*</sup>{% endif %}
+              </label>
+            </div>
+          {% elseif input.acf_fc_layout == "company_input" %}
+            <div class="input" data-aos="{% if loop.index % 2 == 0 %}fade-left{% else %}fade-right{% endif %}" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750">
+              <input type="text" id="company" name="company{% if input.required %}-required{% endif %}">
+              <label>
+                {{input.label}}{% if input.required %}<sup>*</sup>{% endif %}
+              </label>
+            </div>
+          {% elseif input.acf_fc_layout == "email_input" %}
+            <div class="input" data-aos="{% if loop.index % 2 == 0 %}fade-left{% else %}fade-right{% endif %}" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750">
+              <input type="text" id="email" name="email{% if input.required %}-required{% endif %}">
+              <label>
+                {{input.label}}{% if input.required %}<sup>*</sup>{% endif %}
+              </label>
+            </div>
+          {% elseif input.acf_fc_layout == "phone_input" %}
+            <div class="input" data-aos="{% if loop.index % 2 == 0 %}fade-left{% else %}fade-right{% endif %}" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750">
+              <input type="text" id="phone" name="phone{% if input.required %}-required{% endif %}">
+              <label>
+                {{input.label}}{% if input.required %}<sup>*</sup>{% endif %}
+              </label>
+            </div>
+          {% elseif input.acf_fc_layout == "subject_input" %}
+            <div class="input input_full" data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750">
+              <input type="text" id="subject" name="subject{% if input.required %}-required{% endif %}">
+              <label>
+                {{input.label}}{% if input.required %}<sup>*</sup>{% endif %}
+              </label>
+            </div>
+          {% elseif input.acf_fc_layout == "message_input" %}
+            <div class="input input_full" data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750">
+              <textarea id="message" name="message{% if input.required %}-required{% endif %}"></textarea>
+              <label>{{input.label}}{% if input.required %}<sup>*</sup>{% endif %}</label>
+            </div>
+          {% endif %}
+        {% endfor %}
+        <button type="submit" name="button" data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750">{{data.form_button_label}}</button>
+      </form>
+    </div>
+  </div>
+  <div class="hero_bg" style="background-image: url({{data.contact_image}}); background-position:fixed;" data-aos="zoom-out" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750"></div>
+</section>
+{% endblock %}

@@ -1,0 +1,19 @@
+$black: #000;
+$black-l: #252627;
+$white: #fff;
+$offwhite: #f1f1f1;
+
+$grey-d: #111111;
+$grey: #777777;
+$grey-m: #aeaeae;
+$grey-l: #e3e5e4;
+
+$gold: #c5aa63;
+$gold-l: #cbba9c;
+
+$main:$gold;
+$secondary:$grey;
+
+$highlight: $gold;
+$highlight-l: lighten($highlight, 15%);
+$highlight-d: darken($highlight, 15%);

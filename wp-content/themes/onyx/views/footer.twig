@@ -1,0 +1,29 @@
+  <footer class="global">
+    <a href="{{blog_url}}" class="logo_link" data-aos="zoom-in" data-aos-easing="ease-in-sine" data-aos-once="true">
+      <img src="{{theme_url}}/assets/img/logo_full_gold.png">
+    </a>
+    <div class="container">
+      <div class="company_info" data-aos="fade-right" data-aos-once="true" data-aos-easing="ease-in-sine" data-aos-offset="0">
+        <a href="{{data.address_link}}" target="_blank">{{data.address_line1}}<br/>
+        {{data.address_line2}}<br/></a>
+        <p>
+          T - <a href="tel:{{phone_formatted}}">{{phone}}</a>
+        </p>
+      </div>
+      <div class="company_website" data-aos="fade-left" data-aos-once="true" data-aos-easing="ease-in-sine" data-aos-offset="0">
+        <nav>
+          <a href="{{blog_url}}">Home</a>
+						{% for link in site_links %}
+							<a href="{{link.url}}">{{link.label}}</a>
+						{% endfor %}
+        </nav>
+        <p>
+          &copy;{{ year }} {{ site_title }}.
+        </p>
+        <small>
+          <a href="http://www.usmangroup.com" target="_blank">Website Design</a> By UG
+        </small>
+      </div>
+    </div>
+  </footer>
+</main>

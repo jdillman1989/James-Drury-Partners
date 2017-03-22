@@ -1,0 +1,54 @@
+.line{
+  height: 1px;
+  width: 1px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  @include breakpoint(800px){
+    width: 100%;
+  }
+  &.vertical{
+    @include breakpoint(800px){
+      width: 1px;
+    }
+  }
+  span{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: $gold-l;
+    display: block;
+    transform: translateX(0) translateY(0);
+    transition: .75s transform ease-in;
+  }
+  &.rtl span{
+    transform-origin: right;
+  }
+  &.ltr span{
+    transform-origin: left;
+  }
+  &.ttb span{
+    transform-origin: top;
+  }
+  &.btt span{
+    transform-origin: bottom;
+  }
+  &.hidden.rtl span{
+    // width: 0!important;
+    transform: translateX(100%);
+  }
+  &.hidden.ltr span{
+    // width: 0!important;
+    transform:translateX(-100%);
+  }
+  &.hidden.ttb span{
+    // height: 0!important;
+    transform:translateY(-100%);
+  }
+  &.hidden.btt span{
+    // height: 0!important;
+    transform:translateY(100%);
+  }
+}

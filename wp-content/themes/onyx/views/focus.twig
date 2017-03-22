@@ -1,0 +1,152 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<main class="focus-page">
+
+<div class="global_border"></div>
+
+<section class="hero hero_left">
+  <div class="hero_content">
+    <div class="hero_cta">
+      <h1 class="heading_large">
+        {% for headline in data.intro_headline %}
+          <div class="fade-in">
+            <div data-aos="fade-down" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="{{loop.index * 100}}">{{headline.text}}</div>
+          </div>
+        {% endfor %}
+      </h1>
+      <div class="line hidden rtl"><span></span></div>
+      <div class="line hidden ltr"><span></span></div>
+      <p data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750">{{data.intro_content}}</p>
+    </div>
+    <div class="hero_graphic" data-aos="fade-left" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-anchor=".hero">
+      <img src="{{data.intro_graphic}}">
+    </div>
+  </div>
+  <a href="#" class="hero_scroll_button">
+    <img src="{{theme_url}}/assets/img/hero_arrow.png">
+  </a>
+  <div class="hero_bg" style="background-image: url({{data.intro_image}})" data-aos="zoom-out" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750"></div>
+</section>
+
+<section class="way-we-do-it">
+  <div class="container">
+    <div class="way-we-do-it_index">
+      <span class="number-wrapper">
+        <span class="number" data-aos="fade-right" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750">1</span>
+      </span>
+      <div class="line hidden vertical ttb"><span></span></div>
+      <div class="line hidden vertical btt"><span></span></div>
+    </div>
+    <header class="way-we-do-it_header">
+      <h2 class="heading heading_standard bold" data-aos="fade-down" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750">{{data.content_1_title}}</h2>
+      <div class="line hidden rtl"><span></span></div>
+      <div class="line hidden ltr"><span></span></div>
+    </header>
+    <header class="way-we-do-it_content_header">
+      <h3 class="heading heading_average" data-aos="fade-right" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750">{{data.content_1_heading}}</h3>
+    </header>
+    <section class="way-we-do-it_content" data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750">
+      {{data.content_1_wysiwyg}}
+    </section>
+    <section class="way-we-do-it_list">
+      <h4 class="heading heading_standard" data-aos="fade-right" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750">{{data.content_1_list_title}}</h4>
+      <ul data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750">
+        {% for item in data.content_1_list %}
+          <li>{{item.text}}</li>
+        {% endfor %}
+      </ul>
+    </section>
+  </div>
+</section>
+
+<section class="way-we-do-it">
+  <div class="container">
+    <div class="way-we-do-it_index">
+      <span class="number-wrapper">
+        <span class="number" data-aos="fade-right" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750">
+          2
+        </span>
+      </span>
+      <div class="line hidden vertical ttb"><span></span></div>
+      <div class="line hidden vertical btt"><span></span></div>
+    </div>
+    <header class="way-we-do-it_content_header">
+      <h3 class="heading heading_average" data-aos="fade-right" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750">{{data.content_2_heading}}</h3>
+    </header>
+    <section class="way-we-do-it_content" data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750">
+      {{data.content_2_wysiwyg}}
+    </section>
+  </div>
+</section>
+
+<section class="way-we-do-it">
+  <div class="container">
+    <div class="way-we-do-it_index">
+      <span class="number-wrapper">
+        <span class="number" data-aos="fade-right" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750">
+          3
+        </span>
+      </span>
+      <div class="line hidden vertical ttb"><span></span></div>
+      <div class="line hidden vertical btt"><span></span></div>
+    </div>
+    <header class="way-we-do-it_content_header">
+      <h3 class="heading heading_average" data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750">{{data.content_3_heading}}</h3>
+    </header>
+    <section class="way-we-do-it_services">
+      {% for column in data.content_3_columns %}
+        <article class="service">
+          <h4 class="heading heading_standard bold" data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750">{{column.title}}</h4>
+          <p data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750">{{column.content}}</p>
+        </article>
+      {% endfor %}
+    </section>
+  </div>
+</section>
+
+<section class="partnership">
+
+  <div class="partnership_grid">
+    {% for logo in data.testimonial_logos %}
+      <div class="partnership_grid_logo">
+        <img data-aos="zoom-in" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="{{loop.index * 100}}" src="{{logo.url}}">
+      </div>
+    {% endfor %}
+  </div>
+
+  <section class="slider">
+    <div class="line hidden vertical ttb"><span></span></div>
+    <div class="slider_container"  data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750">
+      <div class="slider_quotes slider_quotes slider_wrapper">
+        {% for testimony in data.testimonials %}
+          <article class="slide">
+            <p>{{testimony.text}}</p>
+            <h4 class="heading_small">{{testimony.name_title}}</h4>
+            {% if testimony.image %}
+              <img src="{{testimony.image}}">
+            {% endif %}
+          </article>
+        {% endfor %}
+      </div>
+      <div class="slider_wrapper_arrows arrows ">
+        <a href="#" class="prev">&larr;</a>
+        <a href="#" class="next">&rarr;</a>
+      </div>
+    </div>
+  </section>
+
+</section>
+
+<section class="call-to-action">
+  <div class="call-to-action_content">
+    <h2 class="heading heading_big" data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="0">{{data.cta_title}}</h2>
+    <div class="line hidden ltr"><span></span></div>
+    <div class="line hidden rtl"><span></span></div>
+    <p data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="0">{{data.cta_content}}</p>
+    <a data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="0" href="{{data.cta_url}}" class="button gold hollow">{{data.cta_label}}</a>
+  </div>
+  <div data-aos="zoom-out" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="0" class="call-to-action_bg" style="background-image: url({{data.cta_image}})"></div>
+</section>
+{% endblock %}

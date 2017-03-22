@@ -1,0 +1,70 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<main class="confirmation-page">
+
+<div class="global_border"></div>
+
+<section class="hero hero_middle hero_confirmation">
+  <div class="hero_content">
+    <h1 class="heading_large">
+      {% for headline in intro_headline %}
+        <div class="fade-in">
+          <div data-aos="fade-down" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="{{loop.index * 100}}">{{headline.text}}</div>
+        </div>
+      {% endfor %}
+    </h1>
+    <div class="line hidden rtl"><span></span></div>
+    <div class="line hidden ltr"><span></span></div>
+    <div class="hero_confirmation_details">
+      <p data-aos="fade-right" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="0">{{intro_content}}</p>
+      <div data-aos="fade-left" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="0">
+        <h3 class="heading heading_standard">{{data.contact_title}}</h3>
+        <p>T:<a href="tel:{{phone_formatted}}">{{phone}}</a></p>
+        <p>E:<a href="mailto:{{data.email}}">{{data.email}}</a></p>
+        <a href="{{data.twitter_link}}" target="_blank" class="social">
+          <svg width="247px" height="200px" viewBox="0 0 247 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <path d="M246.437146,23.0289715 L223.351744,46.0630731 C223.351744,46.0630731 223.351744,43.9648665 223.351744,49.90038 C223.351744,54.1019232 222.669442,58.1239133 221.684465,62.0279114 C221.150936,93.7164738 211.034399,135.716516 169.485805,168.882544 C87.75322,234.101371 0.192853519,176.552028 0.192853519,176.552028 C69.4490609,176.552028 69.4490609,153.523056 69.4490609,153.523056 C54.0587926,153.523056 23.278256,122.824601 23.278256,122.824601 C30.9733901,130.499215 46.3636584,122.824601 46.3636584,122.824601 C7.88798767,99.8007599 7.88798767,76.7615282 7.88798767,76.7615282 C15.5831218,84.436142 30.9733901,76.7615282 30.9733901,76.7615282 C-7.50228064,46.0630731 15.5831218,7.6746138 15.5831218,7.6746138 C23.278256,46.057943 123.315,61.4123006 123.315,61.4123006 L124.587262,60.7710395 C123.807489,57.2620583 123.315,49.8029083 123.315,46.0630731 C123.315,18.4991025 145.71297,4.66116035e-12 173.333372,4.66116035e-12 C188.538957,4.66116035e-12 201.995182,6.91536056 211.167782,17.5962068 L215.65661,15.3492276 L238.742012,0.00513008944 L223.351744,30.7035853 L246.437146,23.0289715 Z" id="news-article_actions_share_twitter" fill="#FFFFFF"></path>
+              </g>
+          </svg>
+        </a>
+        <a href="{{data.linkedin_link}}" target="_blank" class="social">
+          <svg width="194px" height="184px" viewBox="0 0 194 184" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <path d="M3.304,59.65 L3.304,183.57 L44.754,183.57 L44.754,59.65 L3.304,59.65 Z M40.984,6.07 C36.4552281,1.89124214 30.4390372,-0.295481159 24.284,1.07543488e-12 C18.0759576,-0.269088016 12.0105572,1.91072134 7.394,6.07 C3.12354361,10.0008729 0.763957692,15.5880222 0.924,21.39 C0.780118375,27.1301926 3.05966263,32.6657101 7.204,36.64 C11.6716863,40.8390882 17.6491386,43.0504209 23.774,42.77 L24.034,42.77 C30.2880371,43.0531898 36.3999093,40.8493206 41.034,36.64 C45.2792621,32.7300953 47.5996894,27.1574156 47.384,21.39 C47.4672144,15.6168251 45.1493075,10.0683355 40.984,6.07 L40.984,6.07 Z M180.824,71 C171.931581,61.4583751 159.315963,56.2755256 146.284,56.81 C141.422394,56.7518905 136.578235,57.4020454 131.904,58.74 C127.954022,59.8577243 124.247263,61.7026254 120.974,64.18 C116.051367,67.8413244 111.893161,72.430978 108.734,77.69 L108.984,77.69 L108.984,59.69 L67.664,59.69 L67.784,65.69 C67.8773333,69.69 67.9206667,82.0233333 67.914,102.69 C67.9073333,123.356667 67.824,150.323333 67.664,183.59 L108.984,183.59 L108.984,114.44 C108.863974,111.009395 109.330683,107.583486 110.364,104.31 C112.080364,100.125555 114.833435,96.446764 118.364,93.62 C122.138362,90.6735679 126.828501,89.1479454 131.614,89.31 C137.843568,88.8456729 143.863792,91.6662309 147.494,96.75 C151.215937,102.94073 152.989451,110.107958 152.584,117.32 L152.584,183.59 L193.824,183.59 L193.824,112.59 C194.919666,97.5799461 190.272961,82.7140655 180.824,71 L180.824,71 Z" id="news-article_actions_share_linked-in" fill="#FFFFFF"></path>
+              </g>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="hero_bg" style="background-image: url({{data.intro_image}})"></div>
+</section>
+
+<section class="twitter-feed">
+  <div class="container">
+  <header>
+    <h2 class="heading heading_big" data-aos="fade-right" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="0">{{data.recent_tweets}}</h2>
+    <a href="https://twitter.com/intent/follow?screen_name=JDruryPartners" class="button hollow bold gold" data-aos="fade-left" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="0">Follow @jdrurypartners</a>
+  </header>
+  <div class="tweets_container">
+    <div class="slider_tweets">
+      {% for tweet in tweets %}
+        <article class="tweet-slide">
+          <time>{{tweet.date}}</time>
+          <p>{{tweet.text}}</p>
+        </article>
+      {% endfor %}
+    </div>
+    <div class="slider_wrapper_arrows arrows">
+      <a href="#" class="prev">&larr;</a>
+      <a href="#" class="next">&rarr;</a>
+    </div>
+  </div>
+  </div>
+</section>
+
+<div class="global_border"></div>
+{% endblock %}

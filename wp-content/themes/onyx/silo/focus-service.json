@@ -1,0 +1,24 @@
+{
+	"acf_fields": [
+		"intro_headline",
+		"intro_content",
+		"intro_graphic",
+		"intro_image",
+		"content_1_title",
+		"content_1_heading",
+		"content_1_wysiwyg",
+		"content_1_list_title",
+		"content_1_list",
+		"content_2_heading",
+		"content_2_wysiwyg",
+		"content_3_heading",
+		"content_3_columns",
+		"testimonial_logos",
+		"testimonials",
+		"cta_title",
+		"cta_content",
+		"cta_label",
+		"cta_url",
+		"cta_image"
+	]
+}

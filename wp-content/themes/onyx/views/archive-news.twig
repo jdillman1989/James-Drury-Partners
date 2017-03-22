@@ -1,0 +1,57 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<main class="news-page">
+
+<div class="global_border"></div>
+
+<section class="hero hero_middle">
+  <div class="hero_content">
+    <h1 class="heading_large">
+      <div class="fade-in">
+        <div data-aos="fade-down" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750" data-aos-delay="0">{{news_title}}</div>
+      </div>
+    </h1>
+    <div class="line hidden ltr"><span></span></div>
+    <div class="line hidden rtl"><span></span></div>
+  </div>
+  <div class="hero_bg" style="background-image: url({{news_image}})" data-aos="zoom-out" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750"></div>
+</section>
+
+<section class="news">
+  <div class="container">
+    <div class="news_article-feed">
+      {% for post in news_data %}
+        <a href="{{post.permalink}}" class="news_article-feed_post" data-aos="fade-up" data-aos-once="true" data-aos-easing="ease-in-out-quart" data-aos-duration="750">
+          <img src="{{post.image}}" >
+          <header>
+            <h2  class="heading heading_mid" >{{post.title}}</h2>
+            <time >{{post.date}}</time>
+          </header>
+          <div class="line hidden rtl"><span></span></div>
+          <div class="line hidden ltr"><span></span></div>
+        </a>
+      {% endfor %}
+      <div class="news_article-feed_pagination">
+        <a href="{{prev_link}}" class="button gold bold prev{{prev_link_disabled}}">Previous</a>
+        <div class="news_article-feed_pagination_numbers">
+          {% for page in pagination %}
+            <a href="{{page.link}}" class="button gold hollow bold{{page.active}}">{{page.number}}</a>
+          {% endfor %}
+          <span class="spacer">&hellip;</span>
+          <a href="/news/page/{{max_pages}}" class="button gold hollow bold">{{max_pages}}</a>
+        </div>
+       <a href="{{next_link}}" class="button gold bold prev{{next_link_disabled}}">Next</a>
+      </div>
+    </div>
+    <div class="news_twitter-feed">
+      <h3 class="heading heading_mid" style="background-image:url({{images_uri}}/news_twitter-feed_heading-bg.svg);">{{news_sidebar_title}}</h3>
+      <a href="https://twitter.com/intent/follow?screen_name=JDruryPartners" class="button gold hollow">follow @JDruryPartners</a>
+      {% for tweet in tweets %}
+        {{tweet.html}}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}
